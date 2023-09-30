@@ -9,8 +9,9 @@
 @endsection
 
 @section('body')
-    <form action="{{ route('trees.store') }}" method="POST">
+    <form action="{{ route('trees.update', $tree) }}" method="POST">
         @csrf
+        @method('PUT')
         <div>
             <label for="name">Nombre</label>
             <br>
@@ -28,8 +29,8 @@
         </div>
 
         <div>
-            <button type="submit">Guardar</button>
-            <a href="{{ route('trees.index') }}">Volver</a>
+            <button type="submit">Actualizar</button>
+            <a href="{{ route('trees.show', $tree) }}">Volver</a>
         </div>
     </form>
 @endsection

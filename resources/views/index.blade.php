@@ -18,7 +18,6 @@
                 <th>NOMBRE</th>
                 <th>ESPECIE</th>
                 <th>EDITAR</th>
-                <th>ELIMINA</th>
             </tr>
         </thead>
         <tbody>
@@ -28,7 +27,13 @@
                     <td>{{ $tree->name }}</td>
                     <td>{{ $tree->specie }}</td>
                     <td><a href="{{ route('trees.show', $tree) }}">Mostrar</a></td>
-                    <td>Eliminar</td>
+                    {{-- <td>
+                        <form action="{{ route('trees.destroy', $tree) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </td> --}}
                 </tr>
             @endforeach
         </tbody>

@@ -74,7 +74,9 @@ class TreeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tree = Tree::find($id);
+        $tree->update($request->all());
+        return redirect()->route('trees.show', $id);
     }
 
     /**
@@ -85,6 +87,8 @@ class TreeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tree = Tree::find($id);
+        $tree->delete($tree);
+        return redirect()->route('trees.index');
     }
 }

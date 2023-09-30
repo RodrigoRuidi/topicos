@@ -30,8 +30,12 @@ Route::get('/rutacontrolador/{dato?}', [PruebaController::class, 'index']);
 /*->with('dato', $dato)
  ->with('hobbies', array('Películas', 'Videojuegos', 'Fútbol', 'Playa'));*/
 
-Route::get('trees', [TreeController::class, 'index'])->name('trees.index');
-Route::get('trees/create', [TreeController::class, 'create'])->name('trees.create');
-Route::post('trees', [TreeController::class, 'store'])->name('trees.store');
-Route::get('trees/{tree}', [TreeController::class, 'show'])->name('trees.show');
-Route::get('trees/{tree}/edit', [TreeController::class, 'edit'])->name('trees.edit');
+// Route::get('trees', [TreeController::class, 'index'])->name('trees.index');
+// Route::get('trees/create', [TreeController::class, 'create'])->name('trees.create');
+// Route::post('trees', [TreeController::class, 'store'])->name('trees.store');
+// Route::get('trees/{tree}', [TreeController::class, 'show'])->name('trees.show');
+// Route::get('trees/{tree}/edit', [TreeController::class, 'edit'])->name('trees.edit');
+// Route::put('trees/{tree}', [TreeController::class, 'update'])->name('trees.update');
+// Route::delete('trees/{tree}', [TreeController::class, 'destroy'])->name('trees.destroy');
+
+Route::resource('trees', TreeController::class)->names('trees');
